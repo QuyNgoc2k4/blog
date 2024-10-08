@@ -130,70 +130,73 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                         </div>
                     </div>
 
-                    <!-- Hiển thị 5 bài viết mới nhất tùy theo danh mục được mở -->
+<!-- Hiển thị 5 bài viết mới nhất tùy theo danh mục được mở -->
 
                     <div class="row" id="row-296880263">
-                        <?php
-                        // Truy vấn bài viết mới nhất từ danh mục cụ thể (ID 1)
-                        $args = array(
-                            'posts_per_page' => 1, // Lấy 1 bài viết mới nhất
-                            'category__in'   => array(1), // Thay 1 bằng ID của danh mục bạn muốn
-                            'post_status'    => 'publish'
-                        );
-
-                        $latest_post = new WP_Query($args);
-
-                        if ($latest_post->have_posts()) :
-                            while ($latest_post->have_posts()) : $latest_post->the_post();
-                        ?>
-
-                                <!-- Hiển thị bài viết mới nhất -->
-                                <div id="col-546039295" class="col medium-6 small-12 large-6">
-                                    <div class="col-inner">
-                                        <div class="box has-hover post-1-nha-tam has-hover box-text-bottom">
-                                            <div class="box-image" style="border-radius: 3%">
-                                                <a href="<?php the_permalink(); ?>"> <!-- Link bài viết -->
-                                                    <div class="">
-                                                        <?php if (has_post_thumbnail()) : ?>
-                                                            <img
-                                                                fetchpriority="high"
-                                                                decoding="async"
-                                                                width="800"
-                                                                height="456"
-                                                                src="<?php the_post_thumbnail_url('large'); ?>" <!-- Hiển thị ảnh đại diện bài viết -->
-                                                            class="attachment- size-"
-                                                            alt="<?php the_title(); ?>"
-                                                            sizes="(max-width: 800px) 100vw, 800px" />
-                                                        <?php endif; ?>
-                                                    </div>
-                                                </a>
+                        <!-- bài vi -->
+                        <div id="col-546039295" class="col medium-6 small-12 large-6">
+                            <div class="col-inner">
+                                <div
+                                    class="box has-hover post-1-nha-tam has-hover box-text-bottom">
+                                    <div class="box-image" style="border-radius: 3%">
+                                        <a href="link-bai-viet-1">
+                                            <div class="">
+                                                <img
+                                                    fetchpriority="high"
+                                                    decoding="async"
+                                                    width="800"
+                                                    height="456"
+                                                    src="link ảnh bài viết 1"
+                                                    class="attachment- size-"
+                                                    alt=""
+                                                 
+                                                    sizes="(max-width: 800px) 100vw, 800px" />
                                             </div>
+                                        </a>
+                                    </div>
 
-                                            <div class="box-text text-center">
-                                                <div class="box-text-inner">
-                                                    <div class="icon-box featured-box icon-post-actor icon-box-left text-left">
-                                                        <div class="icon-box-text last-reset">
-                                                            <h3><?php the_title(); ?></h3> <!-- Tiêu đề bài viết -->
-                                                            <p><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p> <!-- Mô tả ngắn bài viết -->
-                                                            <p>
-                                                                <?php echo get_the_date(); ?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?php the_author(); ?>
-                                                            </p> <!-- Ngày đăng và tên tác giả -->
+                                    <div class="box-text text-center">
+                                        <div class="box-text-inner">
+                                            <div
+                                                class="icon-box featured-box icon-post-actor icon-box-left text-left">
+                                                <div class="icon-box-img" style="width: 60px">
+                                                    <div class="icon">
+                                                        <div class="icon-inner">
+                                                            <img
+                                                                decoding="async"
+                                                                width="300"
+                                                                height="200"
+                                                                src="link ảnh tác giả"
+                                                                class="attachment-medium size-medium"
+                                                                alt=""
+
+                                                                sizes="(max-width: 300px) 100vw, 300px" />
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="icon-box-text last-reset">
+                                                    <h3>Tiêu đề bài viết</h3>
+                                                    <p>
+                                                        hiển thị mô tả bài viết khoảng 4 dòng và ẩn ...
+                                                        (ví dụ
+                                                        Bạn đang tìm kiếm một chiếc lavabo vừa đẹp mắt vừa
+                                                        tiện nghi cho không gian nhà tắm của mình? Việc lựa
+                                                        chọn chiều cao lavabo phù hợp không chỉ ảnh hưởng đến
+                                                        tính thẩm mỹ mà còn trực tiếp tác động đến trải nghiệm
+                                                        sử dụng hàng ngày. ài viết này sẽ giúp bạn hiểu rõ hơn
+                                                        về tầm…)
+                                                    </p>
+                                                    <p>
+                                                        Thời gian&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        &nbsp;tên tác giả
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                        <?php
-                            endwhile;
-                        endif;
-
-                        // Reset lại các truy vấn sau khi sử dụng WP_Query
-                        wp_reset_postdata();
-                        ?>
-
+                            </div>
+                        </div>
 
                         <div id="col-750233409" class="col medium-6 small-12 large-6">
                             <div class="col-inner">
@@ -214,7 +217,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                 src="ảnh bài viết 2"
                                                                 class="attachment- size-"
                                                                 alt=""
-
+                                                                
                                                                 sizes="(max-width: 800px) 100vw, 800px" />
                                                         </div>
                                                     </a>
@@ -284,7 +287,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                 src="ảnh bài viết 3"
                                                                 class="attachment- size-"
                                                                 alt=""
-
+                                                                
                                                                 sizes="(max-width: 800px) 100vw, 800px" />
                                                         </div>
                                                     </a>
@@ -354,7 +357,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                 src="ảnh bài viết 4"
                                                                 class="attachment- size-"
                                                                 alt=""
-
+                                                                
                                                                 sizes="(max-width: 800px) 100vw, 800px" />
                                                         </div>
                                                     </a>
@@ -374,7 +377,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                             src="ảnh tác giả"
                                                                             class="attachment-medium size-medium"
                                                                             alt=""
-
+                                                                            
                                                                             sizes="(max-width: 300px) 100vw, 300px" />
                                                                     </div>
                                                                 </div>
@@ -418,7 +421,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                 src="ảnh bài viết 5"
                                                                 class="attachment- size-"
                                                                 alt=""
-
+                                                               
                                                                 sizes="(max-width: 800px) 100vw, 800px" />
                                                         </div>
                                                     </a>
@@ -438,7 +441,7 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                                                                             src="ảnh tác giả"
                                                                             class="attachment-medium size-medium"
                                                                             alt=""
-
+                                                                            
                                                                             sizes="(max-width: 300px) 100vw, 300px" />
                                                                     </div>
                                                                 </div>
@@ -470,8 +473,8 @@ get_header(); // Gọi header từ theme cha (Flatsome)
                             </div>
                         </div>
                     </div>
-
-                    <!-- Kết thúc Hiển thị 5 bài viết mới nhất tùy theo danh mục được mở -->
+                    
+<!-- Kết thúc Hiển thị 5 bài viết mới nhất tùy theo danh mục được mở -->
                 </div>
             </div>
         </div>
